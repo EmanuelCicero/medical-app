@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
+import 'app_widget.dart';
 
-void main() {
-  runApp(
-    const Center(
-      child: Text(
-        'bla bla bla!',
-        textDirection: TextDirection.ltr,
-      ),
-    ),
-  );
-} 
+main() {
+  runApp(const AppWidget());
+}
