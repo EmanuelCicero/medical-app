@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:medical_app/login_page.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -12,14 +14,24 @@ class Login extends StatefulWidget {
 class LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
-        width: 250,
+    return Container(
+        margin: (const EdgeInsets.only(top: 10, left: 25, right: 25)),
         height: 50,
-        child: OutlinedButton(
-            onPressed: null,
-            style: ButtonStyle(
-                backgroundColor:
-                    WidgetStatePropertyAll(Color.fromRGBO(77, 155, 145, 1))),
-            child: Text('Login', style: TextStyle(color: Colors.white))));
+        width: 200,
+        decoration: const BoxDecoration(
+            color: Color.fromRGBO(77, 175, 145, 1),
+            borderRadius: BorderRadius.all(Radius.circular(32))),
+        child: TextButton(
+          child: const Center(
+            child: Text(
+              'Login',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const LoginPage()));
+          },
+        ));
   }
 }
