@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:medical_app/cadastro_page.dart';
 import 'login.dart';
 
 class HomePage extends StatefulWidget {
@@ -51,7 +53,27 @@ class HomePageState extends State<HomePage> {
             height: 275,
           ),
           const Login(),
-          const Text('Não possui uma conta? Cadastre-se'),
+          Text.rich(
+            textAlign: TextAlign.center,
+            TextSpan(
+                style: const TextStyle(
+                    fontSize: 14, color: Color.fromRGBO(47, 47, 47, 1)),
+                text: 'Não possui uma conta?',
+                children: [
+                  TextSpan(
+                      text: ' Cadastre-se',
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const CadastroPage()));
+                        },
+                      style: const TextStyle(
+                        color: Color.fromRGBO(14, 60, 88, 1),
+                      ))
+                ]),
+          ),
         ],
       )),
     );
