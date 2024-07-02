@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:medical_app/cadastro_page.dart';
 import 'login.dart';
 
@@ -16,7 +17,9 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -42,10 +45,14 @@ class HomePageState extends State<HomePage> {
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
                   color: Color.fromRGBO(47, 47, 47, 1))),
-          const Text(
-            'Sua jornada para o bem estar começa aqui!',
-            style:
-                TextStyle(fontSize: 15, color: Color.fromRGBO(47, 47, 47, 1)),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 50),
+            child: Text(
+              'Sua jornada para o bem estar começa aqui!',
+              textAlign: TextAlign.center,
+              style:
+                TextStyle(fontSize: 20, color: Color.fromRGBO(47, 47, 47, 1)),    
+            ),
           ),
           Image.asset(
             'assets/images/vitalis_illustration.png',
@@ -57,11 +64,11 @@ class HomePageState extends State<HomePage> {
             textAlign: TextAlign.center,
             TextSpan(
                 style: const TextStyle(
-                    fontSize: 14, color: Color.fromRGBO(47, 47, 47, 1)),
-                text: 'Não possui uma conta?',
+                    fontSize: 16, color: Color.fromRGBO(47, 47, 47, 1)),
+                text: 'Não possui uma conta? ',
                 children: [
                   TextSpan(
-                      text: ' Cadastre-se',
+                      text: 'Cadastre-se',
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
                           Navigator.push(
@@ -71,6 +78,7 @@ class HomePageState extends State<HomePage> {
                         },
                       style: const TextStyle(
                         color: Color.fromRGBO(14, 60, 88, 1),
+                        decoration: TextDecoration.underline
                       ))
                 ]),
           ),

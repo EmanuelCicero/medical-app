@@ -15,16 +15,16 @@ class LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Container(
         margin: (const EdgeInsets.only(top: 10, left: 25, right: 25)),
-        height: 50,
-        width: 200,
+        height: 44,
+        width: 320,
         decoration: const BoxDecoration(
-            color: Color.fromRGBO(77, 175, 145, 1),
-            borderRadius: BorderRadius.all(Radius.circular(32))),
+            color: Color.fromRGBO(77, 155, 145, 1),
+            borderRadius: BorderRadius.all(Radius.circular(10))),
         child: TextButton(
           child: const Center(
             child: Text(
               'Login',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white, fontSize: 20),
             ),
           ),
           onPressed: () {

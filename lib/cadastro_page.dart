@@ -19,29 +19,52 @@ class CadastroState extends State<CadastroPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(20),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               const Text(
                 'Cadastre-se',
                 style: TextStyle(fontSize: 30),
+                textAlign: TextAlign.center,
               ),
               const SizedBox(
                 height: 50,
               ),
               Form(
                   child: TextFormField(
-                decoration: const InputDecoration(labelText: 'Nome completo:'),
+                decoration: InputDecoration(
+                  labelText: 'Nome completo',
+                  labelStyle:
+                      const TextStyle(color: Color.fromRGBO(93, 102, 118, 1)),
+                  filled: true,
+                  fillColor: const Color.fromRGBO(228, 241, 238, 1),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(4),
+                      borderSide: BorderSide.none),
+                ),
               )),
               const SizedBox(
                 height: 10,
               ),
-              Form(
-                  child: TextFormField(
-                decoration: const InputDecoration(labelText: 'E-mail:'),
-              )),
+              Padding(
+                padding: const EdgeInsets.only(top: 15, bottom: 15),
+                child: Form(
+                    child: TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'E-mail',
+                    labelStyle:
+                        const TextStyle(color: Color.fromRGBO(93, 102, 118, 1)),
+                    filled: true,
+                    fillColor: const Color.fromRGBO(228, 241, 238, 1),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(4),
+                        borderSide: BorderSide.none),
+                  ),
+                )),
+              ),
               const SizedBox(
                 height: 10,
               ),
@@ -49,7 +72,14 @@ class CadastroState extends State<CadastroPage> {
                 child: TextFormField(
                   obscureText: _isObscure,
                   decoration: InputDecoration(
-                    labelText: 'Senha:',
+                    labelText: 'Senha',
+                    labelStyle:
+                        const TextStyle(color: Color.fromRGBO(93, 102, 118, 1)),
+                    filled: true,
+                    fillColor: const Color.fromRGBO(228, 241, 238, 1),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(4),
+                        borderSide: BorderSide.none),
                     suffixIcon: IconButton(
                       icon: Icon(
                           _isObscure ? Icons.visibility : Icons.visibility_off),
@@ -63,20 +93,19 @@ class CadastroState extends State<CadastroPage> {
                 ),
               ),
               const SizedBox(
-                height: 70,
+                height: 100,
               ),
               Container(
-                  margin: (const EdgeInsets.only(top: 10, left: 25, right: 25)),
-                  height: 50,
-                  width: 200,
+                  height: 44,
+                  width: 350,
                   decoration: const BoxDecoration(
-                      color: Color.fromRGBO(77, 175, 145, 1),
-                      borderRadius: BorderRadius.all(Radius.circular(32))),
+                      color: Color.fromRGBO(77, 155, 145, 1),
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
                   child: TextButton(
                     child: const Center(
                       child: Text(
                         'Cadastrar',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.white, fontSize: 18),
                       ),
                     ),
                     onPressed: () {
@@ -93,11 +122,11 @@ class CadastroState extends State<CadastroPage> {
                 textAlign: TextAlign.center,
                 TextSpan(
                     style: const TextStyle(
-                        fontSize: 14, color: Color.fromRGBO(47, 47, 47, 1)),
-                    text: 'Já possui uma conta?',
+                        fontSize: 16, color: Color.fromRGBO(47, 47, 47, 1)),
+                    text: 'Já possui uma conta? ',
                     children: [
                       TextSpan(
-                          text: ' Entrar',
+                          text: 'Entrar',
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
                               Navigator.push(
@@ -106,8 +135,8 @@ class CadastroState extends State<CadastroPage> {
                                       builder: (context) => const LoginPage()));
                             },
                           style: const TextStyle(
-                            color: Color.fromRGBO(14, 60, 88, 1),
-                          ))
+                              color: Color.fromRGBO(14, 60, 88, 1),
+                              decoration: TextDecoration.underline))
                     ]),
               )
             ],
