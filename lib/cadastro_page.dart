@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:medical_app/login_page.dart';
 import 'package:medical_app/tela_principal.dart';
+import 'finalização_cadastro.dart';
 
 class CadastroPage extends StatefulWidget {
   const CadastroPage({super.key});
@@ -18,8 +19,8 @@ class CadastroState extends State<CadastroPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20),
+      body: Container(
+        margin: EdgeInsets.only(right: 20, left: 20),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -112,7 +113,7 @@ class CadastroState extends State<CadastroPage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const TelaPrincipalPage()));
+                              builder: (context) => CadastroPerfil()));
                     },
                   )),
               const SizedBox(

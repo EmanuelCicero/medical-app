@@ -17,8 +17,8 @@ class LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
-      padding: const EdgeInsets.all(20),
+        body: Container(
+      margin: EdgeInsets.only(left: 20, right: 20),
       child: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
