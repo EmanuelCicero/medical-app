@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:medical_app/home_page.dart';
+import 'package:medical_app/services/autenticacao.dart';
 
 class TelaPrincipalPage extends StatefulWidget {
   const TelaPrincipalPage({super.key});
@@ -12,9 +14,15 @@ class TelaPrincipalPage extends StatefulWidget {
 class TelaPrincipalState extends State<TelaPrincipalPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
         body: Center(
-      child: Text('Tela Principal'),
+      child: ElevatedButton(
+          onPressed: () {
+            Autenticacao().deslogar();
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const HomePage()));
+          },
+          child: const Text("Sair")),
     ));
   }
 }
